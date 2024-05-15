@@ -1,0 +1,43 @@
+<h1 class="ui centered grid large">Welcome to Message Me! - <em>a complete Chat App</em></h1>
+
+<h4 class="ui center aligned medium icon header">
+    <i class="circular orange power icon"></i>
+    Log in or Sign up!
+</h4>
+
+<div class="ui placeholder segment">
+  <div class="ui two column very relaxed stackable grid">
+    <div class="column">
+      <div class="ui form">
+        <%= form_with(scope: :session, local: true, url: login_path, class: "") do |form| %>
+        <div class="field">
+          <label>Username</label>
+          <div class="ui left icon input">
+            <%= form.text_field :username, placeholder: "Username" %>
+            <i class="user icon"></i>
+          </div>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="ui left icon input">
+            <%= form.password_field :password, placeholder: "Password"%>
+            <i class="lock icon"></i>
+          </div>
+        </div>
+        <div class="">
+          <%= form.submit "Log in", class: "ui orange submit button" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="middle aligned column">
+      <div class="ui orange big button">
+        <i class="signup icon"></i>
+        <%= link_to "Sign Up", signup_path, style: "color: white" %>
+      </div>
+    </div>
+  </div>
+  <div class="ui vertical divider">
+    Or
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="ui two column grid">
+  <div class="sixteen wide column">
+      <div class="ui fluid raised card chatbox">
+        <div class="content">
+          <div class="ui header center aligned">
+              Username: <em><%= @user.username %></em>
+          </div>
+          <div class="ui header center aligned">
+              Email: <em><%= @user.email %></em>
+          </div>
+          <div class="ui header center aligned">
+              Full name: <em><%= @user.first_name.capitalize %></em> <em><%= @user.last_name.capitalize %></em>
+          </div>
+          <br/>
+          <div class="ui horizontal divider">
+            Actions
+          </div>
+          <% if current_user.admin? || current_user == @user %>
+            <div class="ui center aligned">
+              <%= link_to "Edit this account", edit_user_path(@user), class: "ui inverted blue button" %>
+              <%= button_to "Delete this account", @user, method: :delete, class: "ui inverted red button" %>
+            </div>
+          <% end %>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="ui inverted menu">
+    <div class="ui container">
+        <a class="item" href="/">
+            Home
+        </a>
+        <a class="item">
+            Messages
+        </a>
+        <div class="right menu">
+            <div class="ui dropdown item">
+            Account <i class="dropdown icon"></i>
+                <div class="menu">
+                    <% if !logged_in? %>
+                        <a class="item" href="/signup">Sign up</a>
+                        <a class="item" href="/login">Log in</a>
+                    <% else %>
+                        <%= link_to "Profile", user_path(current_user), class: "item" %>
+                    <% end %>
+                </div>
+            </div>
+            <div class="item">
+                <% if logged_in? %>
+                    <%= button_to "Log out", logout_path, class: "ui orange button", method: :delete %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

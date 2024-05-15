@@ -1,0 +1,9 @@
+<h4 class="ui center aligned medium icon header">
+    <i class="circular orange user icon"></i> <%= @user.username %>'s Profile
+</h4>
+
+<%= render @user %>
+
+<div class="ui center aligned medium icon header">
+  <%= link_to "[ Back to users ]", users_path %>
+</div>
